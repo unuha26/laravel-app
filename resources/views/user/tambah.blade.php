@@ -1,23 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add User</title>
-</head>
-<body>
-    <button type="button" onclick="window.location='/user/index'">Kembali</button>
+@extends('dashboard.main')
+@section('title')
+Add User
+@endsection
+@section('content')
+<div class="card">
+    <div class="card-body">
+    <button type="button" class="btn btn-primary" onclick="window.location='/user'">Kembali</button>
     @if (session('msg'))
-        {{ session('msg') }}
+    <i style="float: right;">{{ session('msg') }}</i>
     @endif
     <form action="{{ url('/user/simpan') }}" method="post">
         @csrf
-        <input type="text" name="username" id="" placeholder="Username">
-        <input type="password" name="password" id="" placeholder="Password">
-        <input type="text" name="nama" id="" placeholder="Nama">
-        <input type="number" name="role" id="" placeholder="Role 1-3">
-        <button type="submit">Simpan</button>
+    <div class="mb-3 mt-4">
+      <label for="username" class="form-label">Username</label>
+        <input class="form-control" type="text" name="username" id="">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+        <input class="form-control" type="password" name="password" id="">
+    </div>
+    <div class="mb-3">
+      <label for="nama" class="form-label">Nama</label>
+        <input class="form-control" type="text" name="nama" id="">
+    </div>
+    <div class="mb-3">
+      <label for="role" class="form-label">Role</label>
+        <input class="form-control" type="number" name="role" id="">
+    </div>
+        <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
-</body>
-</html>
+    </div>
+</div>
+@endsection

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User;
+use App\Http\Controllers\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,14 @@ use App\Http\Controllers\User;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [Dashboard::class, 'home']);
+Route::controller(Dashboard::class)->group(function () {
+    Route::get('/dashboard', 'home');
+    Route::get('/dashboard/login', 'login');
+    Route::get('/dashboard/home', 'home');
 });
 Route::controller(User::class)->group(function () {
     Route::get('/user', 'index');
