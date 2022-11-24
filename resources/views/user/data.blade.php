@@ -11,7 +11,7 @@ Data User
         @endif
         <table class="table table-hover">
             <thead>
-                <th scope="col">Id</th>
+                <th scope="col">No</th>
                 <th scope="col">Nik</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Jabatan</th>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User;
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Part;
+use App\Http\Controllers\Laporan;
 // use App\Http\Controllers\LogIn;
 
 /*
@@ -48,4 +49,13 @@ Route::controller(Part::class)->group(function () {
     Route::get('/part/edit/{id}', 'edit');
     Route::put('/part/update', 'update');
     Route::delete('/part/delete/{id}', 'delete');
+});
+Route::controller(Laporan::class)->group(function () {
+    Route::get('/laporan', 'index');
+    Route::get('/laporan/index', 'index');
+    Route::get('/laporan/tambah', 'add');
+    Route::post('/laporan/simpan', 'save');
+    Route::get('/laporan/edit/{id}', 'edit');
+    Route::put('/laporan/update', 'update');
+    Route::delete('/laporan/delete/{id}', 'delete');
 });

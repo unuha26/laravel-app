@@ -11,7 +11,7 @@ Data Part
         @endif
         <table class="table table-hover">
             <thead>
-                <th scope="col">Id</th>
+                <th scope="col">No</th>
                 <th scope="col">Kode Part</th>
                 <th scope="col">Nama Part</th>
                 <th scope="col">Lokasi</th>
