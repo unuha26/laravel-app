@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Part;
+// use App\Http\Controllers\LogIn;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,11 @@ use App\Http\Controllers\Dashboard;
 //     return view('welcome');
 // });
 Route::get('/', [Dashboard::class, 'home']);
+// Route::get('LogIn', [Dashboard::class, 'login'])->name('LogIn');
+Route::controller(Dashboard::class)->group(function () {
+    Route::get('LogIn', 'login')->name('LogIn');
+    Route::post('LogIn/proses', 'proses');
+});
 Route::controller(Dashboard::class)->group(function () {
     Route::get('/dashboard', 'home');
     Route::get('/dashboard/login', 'login');
@@ -32,4 +39,13 @@ Route::controller(User::class)->group(function () {
     Route::get('/user/edit/{id}', 'edit');
     Route::put('/user/update', 'update');
     Route::delete('/user/delete/{id}', 'delete');
+});
+Route::controller(Part::class)->group(function () {
+    Route::get('/part', 'index');
+    Route::get('/part/index', 'index');
+    Route::get('/part/tambah', 'add');
+    Route::post('/part/simpan', 'save');
+    Route::get('/part/edit/{id}', 'edit');
+    Route::put('/part/update', 'update');
+    Route::delete('/part/delete/{id}', 'delete');
 });

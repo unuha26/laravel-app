@@ -11,8 +11,8 @@ class User extends Controller
     public function index()
     {
         $data = [
-            'dataUser' => ModelUser::join('divisi', 'divisi.id_divisi', '=', 'user.id_divisi')
-                ->join('jabatan', 'jabatan.id_jabatan', '=', 'user.id_jabatan')
+            'dataUser' => ModelUser::join('divisi', 'divisi.id_divisi', '=', 'users.id_divisi')
+                ->join('jabatan', 'jabatan.id_jabatan', '=', 'users.id_jabatan')
                 ->paginate()
         ];
         return View('user.data', $data);

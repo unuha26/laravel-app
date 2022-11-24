@@ -10,7 +10,7 @@
             </li>
 
             <li class="sidebar-item active">
-                <a class="sidebar-link" href="{{ url('dashboard/home') }}">
+                <a class="sidebar-link" href="{{ url('/') }}">
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                 </a>
             </li>
@@ -22,7 +22,7 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ url('dashboard/login') }}">
+                <a class="sidebar-link" href="{{ url('LogIn') }}">
                     <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
                 </a>
             </li>
@@ -36,6 +36,11 @@
             <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ url('user') }}">
                     <i class="align-middle" data-feather="book"></i> <span class="align-middle">Data User</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ url('part') }}">
+                    <i class="align-middle" data-feather="book"></i> <span class="align-middle">Data Part</span>
                 </a>
             </li>
 
@@ -63,8 +68,7 @@
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="ui-typography.html">
-                    <i class="align-middle" data-feather="align-left"></i> <span
-                        class="align-middle">Typography</span>
+                    <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Typography</span>
                 </a>
             </li>
 
