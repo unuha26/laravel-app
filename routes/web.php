@@ -45,6 +45,7 @@ Route::controller(Part::class)->group(function () {
     Route::get('/part', 'index');
     Route::get('/part/index', 'index');
     Route::get('/part/tambah', 'add');
+    Route::get('/part/minta', 'minta');
     Route::post('/part/simpan', 'save');
     Route::get('/part/edit/{id}', 'edit');
     Route::put('/part/update', 'update');

@@ -31,6 +31,10 @@ Add Spare Part
                 <label for="status" class="form-label">Status</label>
                 <input class="form-control" type="text" name="status" id="">
             </div>
+            <div class="mb-3">
+                <label for="detail" class="form-label">Detail</label>
+                <input class="form-control" type="text" name="detail" id="">
+            </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
     </div>

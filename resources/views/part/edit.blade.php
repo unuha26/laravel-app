@@ -31,6 +31,10 @@ Edit Spare Part
                 <label for="statuspart" class="form-label">Jabatan</label>
                 <input class="form-control" type="text" name="status_part" id="" value="{{ $status_part }}">
             </div>
+            <div class="mb-3">
+                <label for="detail" class="form-label">Jabatan</label>
+                <input class="form-control" type="text" name="detail" id="" value="{{ $detail }}">
+            </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

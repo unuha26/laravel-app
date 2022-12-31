@@ -20,6 +20,11 @@ class Part extends Controller
         // $data = ModelDataPart::table('lokasi')->distinct()->get();
         return View('part.tambah');
     }
+    public function minta()
+    {
+        // $data = ModelDataPart::table('lokasi')->distinct()->get();
+        return View('part.minta');
+    }
     public function save(Request $r)
     {
         $kodepart = $r->kodepart;
@@ -27,6 +32,7 @@ class Part extends Controller
         $lokasi = $r->lokasi;
         $jumlah = $r->jumlah;
         $status = $r->status;
+        $detail = $r->detail;
 
         try {
             $part = new ModelDataPart;
@@ -35,6 +41,7 @@ class Part extends Controller
             $part->lokasi = $lokasi;
             $part->jumlah = $jumlah;
             $part->status_part = $status;
+            $part->detail = $detail;
             $part->save();
             // echo 'Data Berhasil tersimpan';
             $r->session()->flash('msg', "Berhasil menambahkan Part $namapart");
@@ -52,7 +59,8 @@ class Part extends Controller
             'nama_part' => $part->nama_part,
             'lokasi' => $part->lokasi,
             'jumlah' => $part->jumlah,
-            'status_part' => $part->status_part
+            'status_part' => $part->status_part,
+            'detail' => $part->detail
         ];
         return View('part/edit', $part);
     }
@@ -64,6 +72,7 @@ class Part extends Controller
         $lokasi = $r->lokasi;
         $jumlah = $r->jumlah;
         $status_part = $r->status_part;
+        $detail = $r->detail;
 
         try {
             $part = ModelDataPart::find($id);
@@ -72,6 +81,7 @@ class Part extends Controller
             $part->lokasi = $lokasi;
             $part->jumlah = $jumlah;
             $part->status_part = $status_part;
+            $part->detail = $detail;
             $part->save();
             // echo 'Data Berhasil tersimpan';
             $r->session()->flash('msg', "Berhasil memperbarui data $nama_part");
